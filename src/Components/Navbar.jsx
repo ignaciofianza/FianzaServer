@@ -55,7 +55,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Instagrams
+                Instagram
               </a>
             </li>
             <li className="nav-item dropdown">
