@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import usePageTitle from '../Hooks/usePageTitle';
+import usePageTitle from "../Hooks/usePageTitle";
 
 const UbuntuServer = () => {
   usePageTitle("Instalación de Ubuntu Server en Proxmox");
@@ -8,26 +8,37 @@ const UbuntuServer = () => {
     <div className="container mt-5 pt-5">
       <div className="row justify-content-center">
         <div className="col-md-8">
-          <div className="bg-dark text-light p-5 rounded shadow-lg">
-            <h1 className="display-4 font-weight-bold text-white">Instalación de Ubuntu Server en Proxmox</h1>
+          <div className="p-5 rounded shadow-lg">
+            <h1 className="display-4 font-weight-bold">
+              Instalación de Ubuntu Server en Proxmox
+            </h1>
             <p className="lead text-muted">
-              Guía paso a paso para instalar y configurar Ubuntu Server en Proxmox, luego instalar Nginx y Node.js.
+              Guía paso a paso para instalar y configurar Ubuntu Server en
+              Proxmox, luego instalar Nginx y Node.js.
             </p>
 
             <div className="mt-4">
               <h3 className="text-primary">🔧 Requerimientos Mínimos</h3>
-              <p>
-                Asegúrate de tener:
-              </p>
+              <p>Asegúrate de tener:</p>
               <ul>
-                <li><strong>Proxmox VE</strong> instalado y funcionando.</li>
-                <li><strong>Ubuntu Server ISO</strong> descargado desde su página oficial.</li>
-                <li><strong>Recursos suficientes</strong> en Proxmox para crear una nueva máquina virtual.</li>
+                <li>
+                  <strong>Proxmox VE</strong> instalado y funcionando.
+                </li>
+                <li>
+                  <strong>Ubuntu Server ISO</strong> descargado desde su página
+                  oficial.
+                </li>
+                <li>
+                  <strong>Recursos suficientes</strong> en Proxmox para crear
+                  una nueva máquina virtual.
+                </li>
               </ul>
             </div>
 
             <div className="mt-4">
-              <h3 className="text-primary">🔽 Paso 1: Crear una Máquina Virtual (VM) en Proxmox</h3>
+              <h3 className="text-primary">
+                🔽 Paso 1: Crear una Máquina Virtual (VM) en Proxmox
+              </h3>
               <p>
                 1. Accede a la interfaz web de Proxmox (https://-tuIP-:8006).
                 <br />
@@ -37,47 +48,62 @@ const UbuntuServer = () => {
                 <br />
                 4. Completa la información básica de la VM: Nombre, ID, etc.
                 <br />
-                5. En la sección de "OS", selecciona la opción para cargar el ISO de Ubuntu Server.
+                5. En la sección de "OS", selecciona la opción para cargar el
+                ISO de Ubuntu Server.
                 <br />
-                6. En "System", selecciona "QEMU" y "Linux", luego establece la versión de Ubuntu.
+                6. En "System", selecciona "QEMU" y "Linux", luego establece la
+                versión de Ubuntu.
                 <br />
-                7. En "Disco duro", selecciona el tamaño y tipo de almacenamiento adecuado.
+                7. En "Disco duro", selecciona el tamaño y tipo de
+                almacenamiento adecuado.
                 <br />
-                8. En "Red", configura la interfaz de red para que sea una red puente (bridged).
+                8. En "Red", configura la interfaz de red para que sea una red
+                puente (bridged).
                 <br />
                 9. Haz clic en "Finish" para crear la VM.
               </p>
             </div>
 
             <div className="mt-4">
-              <h3 className="text-primary">⚙️ Paso 2: Instalar Ubuntu Server en la VM</h3>
+              <h3 className="text-primary">
+                ⚙️ Paso 2: Instalar Ubuntu Server en la VM
+              </h3>
               <p>
                 1. Inicia la VM que acabas de crear desde Proxmox.
                 <br />
-                2. Accede a la consola de la VM desde la interfaz web de Proxmox.
+                2. Accede a la consola de la VM desde la interfaz web de
+                Proxmox.
                 <br />
-                3. La VM arrancará desde el ISO de Ubuntu Server. Selecciona "Install Ubuntu Server".
+                3. La VM arrancará desde el ISO de Ubuntu Server. Selecciona
+                "Install Ubuntu Server".
                 <br />
-                4. Sigue las instrucciones para configurar la red, zona horaria, usuario y contraseña.
+                4. Sigue las instrucciones para configurar la red, zona horaria,
+                usuario y contraseña.
                 <br />
-                5. En el particionado, selecciona "Usar todo el disco" para facilitar la instalación.
+                5. En el particionado, selecciona "Usar todo el disco" para
+                facilitar la instalación.
                 <br />
                 6. Cuando termine la instalación, reinicia la máquina.
               </p>
             </div>
 
             <div className="mt-4">
-              <h3 className="text-primary">🔧 Paso 3: Configuración de Red e IP Estática</h3>
+              <h3 className="text-primary">
+                🔧 Paso 3: Configuración de Red e IP Estática
+              </h3>
               <p>
-                1. Accede al servidor con el usuario creado durante la instalación.
+                1. Accede al servidor con el usuario creado durante la
+                instalación.
                 <br />
-                2. Edita el archivo de configuración de red para asignar una IP estática:
+                2. Edita el archivo de configuración de red para asignar una IP
+                estática:
                 <br />
                 <code>sudo nano /etc/netplan/00-installer-config.yaml</code>
                 <br />
-                3. Configura la IP estática de la siguiente manera (ajusta las direcciones según tu red):
+                3. Configura la IP estática de la siguiente manera (ajusta las
+                direcciones según tu red):
                 <pre>
-{`
+                  {`
 network:
   version: 2
   renderer: networkd
@@ -118,16 +144,23 @@ network:
                 <br />
                 <code>sudo systemctl start nginx</code>
                 <br />
-                4. Verifica que Nginx esté funcionando abriendo el navegador e ingresando la IP del servidor. Deberías ver la página predeterminada de Nginx.
+                4. Verifica que Nginx esté funcionando abriendo el navegador e
+                ingresando la IP del servidor. Deberías ver la página
+                predeterminada de Nginx.
               </p>
             </div>
 
             <div className="mt-4">
-              <h3 className="text-primary">⚙️ Paso 5: Instalación de Node.js</h3>
+              <h3 className="text-primary">
+                ⚙️ Paso 5: Instalación de Node.js
+              </h3>
               <p>
                 1. Instala Node.js:
                 <br />
-                <code>curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -</code>
+                <code>
+                  curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E
+                  bash -
+                </code>
                 <br />
                 2. Instala Node.js:
                 <br />
@@ -142,7 +175,9 @@ network:
             </div>
 
             <div className="mt-4">
-              <h3 className="text-primary">🔒 Paso 6: Configuración de SSL con Let's Encrypt</h3>
+              <h3 className="text-primary">
+                🔒 Paso 6: Configuración de SSL con Let's Encrypt
+              </h3>
               <p>
                 1. Instala Certbot:
                 <br />
@@ -150,18 +185,25 @@ network:
                 <br />
                 2. Obtén el certificado SSL:
                 <br />
-                <code>sudo certbot --nginx -d ignaciofianza.com -d www.ignaciofianza.com</code>
+                <code>
+                  sudo certbot --nginx -d ignaciofianza.com -d
+                  www.ignaciofianza.com
+                </code>
                 <br />
-                3. Verifica que el certificado se haya instalado correctamente abriendo el sitio en https.
+                3. Verifica que el certificado se haya instalado correctamente
+                abriendo el sitio en https.
               </p>
             </div>
 
             <div className="mt-4">
-              <h3 className="text-primary">🚀 Paso 7: Desplegar tu Aplicación Node.js</h3>
+              <h3 className="text-primary">
+                🚀 Paso 7: Desplegar tu Aplicación Node.js
+              </h3>
               <p>
                 1. Sube tu aplicación Node.js a tu servidor.
                 <br />
-                2. Asegúrate de que la aplicación esté corriendo en el puerto 3000 (o el que hayas configurado).
+                2. Asegúrate de que la aplicación esté corriendo en el puerto
+                3000 (o el que hayas configurado).
                 <br />
                 3. Usa PM2 para mantener la aplicación en segundo plano:
                 <br />
@@ -178,7 +220,10 @@ network:
             <div className="mt-4">
               <h3 className="text-primary">📝 Consideraciones Finales</h3>
               <p>
-                Con estos pasos habrás instalado y configurado Ubuntu Server en Proxmox, configurado Nginx como reverse proxy, y Node.js para tu aplicación. Ahora tienes un servidor seguro y listo para producción.
+                Con estos pasos habrás instalado y configurado Ubuntu Server en
+                Proxmox, configurado Nginx como reverse proxy, y Node.js para tu
+                aplicación. Ahora tienes un servidor seguro y listo para
+                producción.
               </p>
             </div>
 

@@ -8,8 +8,8 @@ const AMP = () => {
     <div className="container mt-5 pt-5">
       <div className="row justify-content-center">
         <div className="col-md-8">
-          <div className="bg-dark text-light p-5 rounded shadow-lg">
-            <h1 className="display-4 font-weight-bold text-white">
+          <div className="p-5 rounded shadow-lg">
+            <h1 className="display-4 font-weight-bold">
               Configuración de AMP Panel en Proxmox
             </h1>
             <p className="lead text-muted">
@@ -18,11 +18,11 @@ const AMP = () => {
             </p>
 
             {/* Disclaimer */}
-            <div className="mt-4 rounded p-4 bg-warning-subtle text-dark">
+            <div className="mt-4 rounded p-4 bg-warning-subtle">
               <h3 className="text-danger font-weight-bold">
                 ⚠️ Aviso importante
               </h3>
-              <p className="text-light">
+              <p>
                 <strong className="text-danger">
                   AMP es un programa de pago.
                 </strong>{" "}
@@ -31,7 +31,7 @@ const AMP = () => {
                 utilizarlo, asegúrate de tener en cuenta que necesitarás esta
                 licencia para su funcionamiento.
               </p>
-              <p className="text-light">
+              <p>
                 Te recomiendo seguir el tutorial en video que proporcionamos a
                 continuación para configurar AMP Panel correctamente. Mira la
                 sección correspondiente a partir del minuto 6:13 si solo te
@@ -41,9 +41,7 @@ const AMP = () => {
 
             <div className="mt-4">
               <h3 className="text-primary">📺 Ver Video Tutorial</h3>
-              <p>
-                Mira este video para aprender cómo configurar AMP Panel
-              </p>
+              <p>Mira este video para aprender cómo configurar AMP Panel</p>
 
               <div
                 className="mt-4"

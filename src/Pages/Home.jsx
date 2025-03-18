@@ -47,12 +47,8 @@ const Home = () => {
           <div key={index} className="col-md-4 mb-4">
             <div className="card shadow-lg h-100 border-0 rounded">
               <div className="card-body d-flex flex-column">
-                <h5 className="card-title font-weight-bold text-white">
-                  {section.title}
-                </h5>
-                <p className="card-text text-white flex-grow-1">
-                  {section.description}
-                </p>
+                <h5 className="card-title font-weight-bold">{section.title}</h5>
+                <p className="card-text flex-grow-1">{section.description}</p>
                 <Link
                   className="btn btn-secondary btn-lg px-4 py-2 mt-3 rounded-pill shadow align-self-center"
                   to={section.link}

@@ -8,8 +8,8 @@ const WireGuard = () => {
     <div className="container mt-5 pt-5">
       <div className="row justify-content-center">
         <div className="col-md-8">
-          <div className="bg-dark text-light p-5 rounded shadow-lg">
-            <h1 className="display-4 font-weight-bold text-white">
+          <div className="p-5 rounded shadow-lg">
+            <h1 className="display-4 font-weight-bold">
               Configuración de WireGuard con Proxmox
             </h1>
             <p className="lead text-muted">
