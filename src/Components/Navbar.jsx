@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { Sun, Moon, SunMoon, } from "lucide-react"; // Importamos los íconos de Lucide
+import { Link, NavLink } from "react-router-dom";
+import { Sun, Moon, SunMoon } from "lucide-react"; // Importamos los íconos de Lucide
 import { useEffect, useState } from "react";
 import "../Assets/CSS/navbar.css";
 
@@ -37,7 +37,7 @@ const Navbar = () => {
   }, [theme]);
 
   return (
-    <nav className="navbar navbar-expand-lg bg-dark bg-opacity-50 sticky-top">
+    <nav className="navbar navbar-expand-lg bg-dark bg-opacity-75 sticky-top">
       <div className="container">
         <Link
           className="navbar-brand"
@@ -63,34 +63,34 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a
+              <NavLink
                 className="nav-link"
-                href="https://ignaciofianza.com"
+                to="https://ignaciofianza.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Página personal
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a
+              <NavLink
                 className="nav-link"
-                href="https://github.com/ignaciofianza"
+                to="https://github.com/ignaciofianza"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 GitHub
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a
+              <NavLink
                 className="nav-link"
-                href="https://www.instagram.com/nachofianzaa_"
+                to="https://www.instagram.com/nachofianzaa_"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Instagram
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item dropdown">
               <a
@@ -105,34 +105,34 @@ const Navbar = () => {
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <Link className="dropdown-item" to="/proxmox">
+                  <NavLink className="dropdown-item" to="/proxmox">
                     Proxmox
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/vpn">
+                  <NavLink className="dropdown-item" to="/vpn">
                     VPN
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/truenas">
+                  <NavLink className="dropdown-item" to="/truenas">
                     TrueNAS
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/amp">
+                  <NavLink className="dropdown-item" to="/amp">
                     AMP Panel
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/ubuntu">
+                  <NavLink className="dropdown-item" to="/ubuntu">
                     Ubuntu Server
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/web">
+                  <NavLink className="dropdown-item" to="/web">
                     Web
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </li>
