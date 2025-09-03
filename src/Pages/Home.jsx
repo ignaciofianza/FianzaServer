@@ -37,7 +37,7 @@ const Home = () => {
           <strong>Modelo:</strong> HP EliteDesk 800 G1 SFF <br />
           <strong>Procesador:</strong> Intel Core i5-4590 <br />
           <strong>Memoria RAM:</strong> 16GB <br />
-          <strong>Almacenamiento:</strong> 1.5TB HDD (Planeo migrar proxmox y
+          <strong>Almacenamiento:</strong> 2TB (1.5TB HDD, 500GB SSD)
           VM's a un SSD de 500GB)
         </p>
       </div>
